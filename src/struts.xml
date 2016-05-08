@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.custom.i18n.resources" value="global" />
+	<constant name="struts.multipart.saveDir" value="/tmp"> </constant>
+
+	<constant name="struts.action.extension" value="," />
+
+	<constant name="struts.multipart.maxSize" value="20000000" />
+
+
+	<package name="aBC" namespace="/"   extends="json-default">
+			 <action name="index"
+			class="java9r.controller.com.ProducController" method="index" >
+			<result name="success">productlist.jsp</result>
+		</action>
+		
+		
+		
+		 <action name="ordernow"
+			class="java9r.controller.com.ShoppingCartController" method="ordernow" >
+			<result name="success">cart.jsp</result>
+		</action>
+      
+      
+       <action name="delete"
+			class="java9r.controller.com.ShoppingCartController" method="delete" >
+			<result name="success">cart.jsp</result>
+		</action>
+     <!--   <action name="sample2" 
+           class="sample.com.SampleAjax" method="sample2">
+       	   <result type="json" />
+      </action>
+       -->
+       
+      
+	</package>
+</struts>
